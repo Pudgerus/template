@@ -1,0 +1,126 @@
+body, html {
+    background: 
+       radial-gradient(
+           ellipse 70% 80%  at 7%,
+           rgba(51, 35, 134, 0.756) 30% ,
+           black
+       ); 
+
+   background-color: rgb(10, 1, 24);
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   height: 100%;
+}
+
+h1 {
+   font-family: 'Roboto';
+   font-size: 60px;
+   font-weight: bold;
+   color: white;
+   
+}
+
+p{
+   color: white;
+   font-family: 'Roboto';
+   line-height: 30px;
+}
+
+a {
+   color: white;
+   text-decoration: none;
+}
+
+header {
+   display: flex;
+   flex-direction: inline;
+   z-index: 100;
+   width: 90%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   color: white;
+   font-family: 'Roboto';
+   justify-content: space-between;
+   padding: 0 0 0 5%;
+}
+
+header span{
+   display: flex;
+   flex-direction: inline;
+   justify-content: space-between;
+   width: 40%;
+}
+
+header p {
+   font-size: 15px;
+}
+
+header a {
+   text-decoration: none;
+   color: white;
+}
+
+header a:visited {
+   color: white;
+}
+
+.App {
+   min-height: 100vh;
+   height: 1vh;
+   width: 100%;
+   display: flex;
+   flex-direction: inline;
+   padding-right: 10%;
+   justify-content: start;
+   align-items: center;
+   padding-left: 7%;
+}
+
+.stick {
+   width: 30px;
+   height: 70%;
+   background-color: white;
+   border-radius: 15px;
+   color: rgb(0, 60, 255);
+   box-shadow:
+       0 0 40px 10px rgb(160, 186, 247),
+       0 0 100px 20px rgb(34, 122, 255),
+       0 0 700px 40px rgb(0, 58, 248),
+       inset 0 0 10px rgb(0, 76, 255);
+}
+
+.content {
+   height: 50%;
+   padding: 10%;
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+}
+
+.content p{
+   width: 50%;
+}
+
+.selector {
+   height: 90%;
+   display: flex;
+   flex-direction: column;
+   align-items: end;
+   justify-content: end;
+}
+
+.selector a{
+   position: relative;
+}
+
+.selector a:hover::before {
+   content: "";
+   position: absolute;
+   top: 8px;
+   left: -60px;
+   height: 2px;
+   width: 50px;
+   background: white;
+}
