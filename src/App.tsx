@@ -1,49 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
+import "./index.css";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <p>
-//           Edit <code>src/App.tsx</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
+const items = [
+    { id: "item1", title: "NEW RELEASES", bg: "#3a506e" },
+    { id: "item2", title: "3D ILLUS", bg: "#96b4a4" },
+    { id: "item3", title: "DIGITAL", bg: "#c12426" },
+    { id: "item4", title: "ART", bg: "#bc4c30" },
+    { id: "item5", title: "CUSTOMIZE", bg: "#c6903a" },
+];
 
 function App() {
-    return (
-        <div className="App">
-            <header>
-                <span>
-                    <h3><a href="#">SPECTRUM</a></h3>
-                    <p>+7(4567) 360-76-80 <br />email@yandex.ru</p>
-                </span>
-                <h3><a href="#">MENU</a></h3>
-            </header>
-            <div className="stick"></div>
-            <div className="content">
-                <h1>WE WILL SHOW <br /> YOUR <br /> TALENTS</h1>
-                <p>As result we help our students to reveal hidden talents, find their true calling and lifework that will never disapiont them</p>
-            </div>
-            <div className="selector">
-                <p><a href="#">ABOUT COMPANY</a></p>
-                <p><a href="#">COMENTS</a></p>
-                <p><a href="#">NEWS</a></p>
-            </div>
+    const [activeIdx, setActiveIdx] = useState(2);
 
+    return (
+        <div className="main-bg" style={{ background: items[activeIdx].bg, transition: 'background 0.5s' }}>
+            <header className="header">
+                {items.map((item) => (
+                    <span key={item.id}>{item.title}</span>
+                ))}
+            </header>
+            <div className="carousel">
+                {items.map((item, idx) => (
+                    <div
+                        className="item"
+                        id={item.id}
+                        key={item.id}
+                        style={
+                            idx === activeIdx
+                                ? { width: '20%', zIndex: 2}
+                                : { width: '120px', zIndex: 1}
+                        }
+                        onClick={() => setActiveIdx(idx)}
+                    ></div>
+                ))}
+            </div>
         </div>
     );
 }
