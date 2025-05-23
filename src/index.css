@@ -44,29 +44,3 @@ body, html, #root, .main-bg {
  }
 
 
-#item1 {
-   background-image: url("../images/knight.jpg");
-   background-size: cover;
-   background-position: top;
-   background-repeat: no-repeat;
-}
-
-#item3 {
-   background-image: url("../images/knightred.jpg");
-   background-size: cover;
-   background-position: top;
-   background-repeat: no-repeat;
-}
-
-#item2 {
-   background-image: url("../images/knightblack.jpg");
-}
-
-#item4 {
-   background-image: url("../images/knightcat.jpg");
-}
-
-#item5 {
-   background-image: url("../images/knightsleep.jpg");
-}
-
