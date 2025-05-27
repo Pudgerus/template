@@ -29,6 +29,13 @@ interface Album {
   image?: Image[];
 }
 
+/**
+ * Главный компонент приложения Last.fm, отображающий популярную музыку и предоставляющий функциональность поиска.
+ *
+ * @component
+ * @returns {JSX.Element} Главный JSX-элемент приложения.
+ */
+
 const LastFmApp = () => {
   const [topArtists, setTopArtists] = useState<Artist[]>([]);
   const [topTracks, setTopTracks] = useState<Track[]>([]);
@@ -47,6 +54,11 @@ const LastFmApp = () => {
   const BASE_URL = 'https://ws.audioscrobbler.com/2.0/';
 
   useEffect(() => {
+    /**
+ * Загружает топ артистов и треков с API Last.fm, если поиск не активен.
+ * Используется в useEffect.
+ * @returns {Promise<void>}
+ */
     const fetchData = async () => {
       try {
         setLoading(true);
@@ -82,6 +94,12 @@ const LastFmApp = () => {
     }
   }, [isSearching]);
 
+  /**
+ * Выполняет поиск артистов, альбомов и треков по запросу пользователя.
+ *
+ * @param {string} query - Строка запроса для поиска.
+ * @returns {Promise<void>}
+ */
   const handleSearch = async (query: string) => {
     if (!query.trim()) {
       setIsSearching(false);
@@ -117,6 +135,13 @@ const LastFmApp = () => {
     }
   };
 
+  /**
+ * Получает URL изображения из массива изображений, соответствующий заданному размеру.
+ *
+ * @param {Image[] | undefined} images - Массив изображений.
+ * @param {string} [size='medium'] - Размер изображения ('small', 'medium', 'large', 'extralarge').
+ * @returns {string} URL изображения или URL изображения-заглушки.
+ */
   const getImage = (images?: Image[], size: string = 'medium'): string => {
     if (!images || !Array.isArray(images) || images.length === 0) {
       return 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=150&h=150&fit=crop&crop=face';
@@ -126,6 +151,13 @@ const LastFmApp = () => {
     return image?.['#text'] || 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=150&h=150&fit=crop&crop=face';
   };
 
+  
+/**
+ * Форматирует числовую строку в более читаемый формат с сокращениями (K, M).
+ *
+ * @param {string | undefined} numStr - Числовая строка для форматирования.
+ * @returns {string} Отформатированная строка.
+ */
   const formatNumber = (numStr?: string): string => {
     if (!numStr) return '0';
     const num = parseInt(numStr);
@@ -139,6 +171,11 @@ const LastFmApp = () => {
     return num.toString();
   };
 
+  /**
+ * Отрисовывает страницу с результатами поиска.
+ *
+ * @returns {JSX.Element} JSX-разметка поисковой страницы.
+ */
   const renderSearchPage = () => (
     <div className="main-content">
       <div className="content-left">
@@ -261,6 +298,11 @@ const LastFmApp = () => {
     </div>
   );
 
+  /**
+ * Отрисовывает главную страницу с топ-артистами и треками.
+ *
+ * @returns {JSX.Element} JSX-разметка главной страницы.
+ */
   const renderMainPage = () => (
     <>
       <h1 className="page-title">Music</h1>
