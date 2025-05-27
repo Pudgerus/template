@@ -1,0 +1,285 @@
+.content-left {
+    flex: 1;
+}
+
+.content-right {
+    width: 300px;
+    padding-left: 20px;
+    border-left: 1px solid #e6e6e6;
+}
+
+.search-title {
+    font-size: 24px;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.search-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.tab {
+    padding: 10px 0;
+    margin-right: 30px;
+    cursor: pointer;
+    color: #666;
+    border-bottom: 2px solid transparent;
+    font-size: 13px;
+}
+
+.tab.active {
+    color: #2c2c2c;
+    border-bottom-color: #d51007;
+    font-weight: bold;
+}
+
+.search-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+.search-btn {
+    padding: 8px 12px;
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.section-title {
+    font-size: 18px;
+    color: #2c2c2c;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.artists-section {
+    margin-bottom: 40px;
+}
+
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    background: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.artist-item {
+    background: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100px;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.artist-item:nth-child(even) {
+    border-right: none;
+}
+
+.artist-item:nth-child(n+3) {
+    border-bottom: none;
+}
+
+.artist-item:hover {
+    background: #e8e8e8;
+}
+
+.artist-name {
+    font-size: 13px;
+    color: #2c2c2c;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.artist-listeners {
+    font-size: 11px;
+    color: #666;
+}
+
+.more-link {
+    color: #0073e6;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.more-link:hover {
+    text-decoration: underline;
+}
+
+.albums-section {
+    margin-bottom: 40px;
+    max-width: 1200px;
+}
+
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.album-item {
+    cursor: pointer;
+}
+
+.album-cover {
+    width: 80%;
+    aspect-ratio: 1 / 1; /* Делает блок квадратным */
+    background: #ddd;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #666;
+    position: relative;
+    overflow: hidden;
+}
+
+.album-cover img {
+    object-fit: cover;
+}
+
+
+.album-cover.hot-beat {
+    background: linear-gradient(45deg, #ff6b35, #f7931e);
+    color: white;
+}
+
+.album-cover.formal-chicken {
+    background: #ddd;
+}
+
+.album-cover.radioclub {
+    background: #888;
+}
+
+.album-cover.rick-astley {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    color: white;
+}
+
+.album-cover.the-wombats {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+}
+
+.album-cover.indihi {
+    background: #666;
+    color: white;
+}
+
+.album-cover.smash-mouth {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #dda0dd);
+    color: white;
+}
+
+.album-cover.lofi {
+    background: #ccc;
+}
+
+.album-title {
+    font-size: 12px;
+    color: #2c2c2c;
+    font-weight: bold;
+    margin-bottom: 2px;
+    line-height: 1.2;
+}
+
+.album-artist {
+    font-size: 11px;
+    color: #666;
+}
+
+.tracks-section {
+    margin-bottom: 40px;
+}
+
+.tracks-list {
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.track-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.track-item:last-child {
+    border-bottom: none;
+}
+
+.track-item:hover {
+    background: #f8f8f8;
+}
+
+.play-icon {
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    color: #666;
+}
+
+.track-cover {
+    width: 34px;
+    height: 34px;
+    background: #ddd;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
+.track-info {
+    flex: 1;
+}
+
+.track-title {
+    font-size: 13px;
+    color: #2c2c2c;
+    margin-bottom: 2px;
+}
+
+.track-artist {
+    font-size: 12px;
+    color: #666;
+}
+
+.track-duration {
+    font-size: 12px;
+    color: #999;
+}
+
+.sidebar-content {
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
